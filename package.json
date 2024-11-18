@@ -1,0 +1,16 @@
+{
+  "name": "bitka-ativise",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/main.mjs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "whatsapp-chat-parser": "^4.0.1"
+  }
+}

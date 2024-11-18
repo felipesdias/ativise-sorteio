@@ -1,0 +1,7 @@
+node_modules
+attachments
+data
+/*.zip
+mapNames.txt
+mapIgnoreNamesTicket.txt
+possibilities.txt
