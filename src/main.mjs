@@ -29,13 +29,16 @@ async function main() {
     const clearMessages = messages
         .filter(message => message.attachment)
         .filter(message => !ignoreFiles.includes(message.attachment.fileName.split('.').at(-1)))
-        .filter(message => {
-            const m = message.date.toISOString().split('T')[0];
-            return months.find(x => m.startsWith(x))
-        })
         .map(message => {
             const localDate = new Date(message.date.getTime() - 3 * 60 * 60 * 1000);
             return { ...message, date: localDate };
+        })
+        .filter(message => {
+            if (months.includes('*')) {
+                return true;
+            }
+            const m = message.date.toISOString().split('T')[0];
+            return months.find(x => m.startsWith(x))
         })
         .filter(message => {
             if (message.author === 'Meta AI') {
